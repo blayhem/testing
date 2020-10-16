@@ -21,13 +21,10 @@ It uses [Jest](https://jestjs.io/) for functional and snapshot testing. More abo
 
 The app is organized as follows:
 
-```
-.
-├── components -> UI components, each with SCSS modules and tests.
-├── pages -> next pages/routes, decoupled from styles, pure scaffolding.
-├── public -> assets.
-└── styles -> global styles and variables available to every component.
-```
+- `/components`: UI components, each with SCSS modules and tests.
+- `/pages`: next pages/routes, decoupled from styles, pure scaffolding.
+- `/public`: assets.
+- `/styles`: global styles and variables available to every component.
 
 ## 3. Testing.
 
