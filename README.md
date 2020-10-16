@@ -1,30 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sigma Rail Front-end test.
 
-## Getting Started
+## 1. Setup
 
-First, run the development server:
+This application is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+To start the app simply run:
 
 ```bash
-npm run dev
-# or
+yarn
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 2. Architecture of the application.
 
-## Learn More
+This app, although it's a very lightweight exercise, it's packed with overkill tools such as [Redux](https://redux-toolkit.js.org/) in order to showcase what can be done, and potentially be scalable in the future.
 
-To learn more about Next.js, take a look at the following resources:
+It uses [Jest](https://jestjs.io/) for functional and snapshot testing. More about this down below.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app is organized as follows:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+.
+├── components -> UI components, each with SCSS modules and tests.
+├── pages -> next pages/routes, decoupled from styles, pure scaffolding.
+├── public -> assets.
+└── styles -> global styles and variables available to every component.
+```
 
-## Deploy on Vercel
+## 3. Testing.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can run `yarn test` or `yarn test --coverage` to run the suite of tests available in the application and also check the coverage of the tests in the code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The tests implemented are:
+<!-- TODO: expand this section -->
+- Functional tests (component rendering, snapshots...)
+- Unit tests (reducers, API calls...)
+- Integration tests
