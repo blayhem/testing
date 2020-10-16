@@ -5,11 +5,32 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watchAll"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "9.5.5",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "sass": "^1.27.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(scss|less)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^26.5.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.5.3",
+    "react-test-renderer": "^16.14.0"
   }
 }
