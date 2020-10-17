@@ -17,7 +17,9 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "^.+\\.(scss|less)$": "identity-obj-proxy"
+      "^.+\\.(scss|less)$": "identity-obj-proxy",
+      "components/(.*)": "<rootDir>/components/$1",
+      "styles/(.*)": "<rootDir>/styles/$1"
     },
     "moduleFileExtensions": [
       "js",

@@ -1,0 +1,33 @@
+@import 'styles/variables';
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 11px;
+  }
+
+  .wrapper {
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      text-transform: uppercase;
+      margin: 0;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $color-gray-4;
+      margin: 0;
+    }
+  }
+}

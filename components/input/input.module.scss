@@ -1,0 +1,55 @@
+@import 'styles/variables';
+
+.URLinput {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 906px;
+  height: 60px;
+  border: 2px solid $color-gray-4;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  .inputLabel { 
+    position:relative;
+    flex-grow: 1;
+
+    .textInput {
+      height: 100%;
+      width: 100%;
+      font-size:18px;
+      padding: 10px 10px 10px 5px;
+      display:block;
+      border:none;
+
+      &:valid ~ .inputLabel {
+        top:-20px;
+        font-size:14px;
+        color:#5264AE;
+      }
+
+      &:focus {
+        outline:none;
+
+        & ~ .inputLabel {
+          top:-20px;
+          font-size:14px;
+          color:#5264AE;
+        }
+      }
+    }
+
+    .inputLabel {
+      color:#999; 
+      font-size:18px;
+      font-weight:normal;
+      position:absolute;
+      pointer-events:none;
+      left:5px;
+      top: 14px;
+      transition:0.2s ease all; 
+      -moz-transition:0.2s ease all; 
+      -webkit-transition:0.2s ease all;
+    }
+  }
+}
