@@ -25,16 +25,15 @@ const slice = createSlice({
 export const postData = () => async (dispatch) => {
   const { setStage, setError, setCatsNumber } = slice.actions;
   try {
-    const { data } = await fetch(
-      'https://whispering-ravine-32505.herokuapp.com'
-    ).then((res) => res.json());
+    const response = await fetch('https://whispering-ravine-32505.herokuapp.com');
+    const data = await response.json();
 
     dispatch(setCatsNumber(data.number));
     dispatch(setStage(3));
+    return data.number;
   } catch (e) {
-    console.error(e);
     dispatch(setError(true));
-    return [];
+    return null;
   }
 };
 
