@@ -9,6 +9,7 @@ export default function Button({
   icon,
   style,
   onClick,
+  className
 }) {
   Button.propTypes = {
     disabled: PropTypes.bool,
@@ -17,13 +18,14 @@ export default function Button({
     icon: PropTypes.string,
     style: PropTypes.object,
     onClick: PropTypes.func,
+    className: PropTypes.string
   };
 
   return (
     <button
       disabled={disabled}
       style={{ ...style }}
-      className={cx(styles.button, { [styles.error]: error })}
+      className={cx(styles.button, { [styles.error]: error }, className)}
       onClick={onClick}
     >
       {icon ? <img src={icon} alt="button icon" /> : null}

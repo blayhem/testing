@@ -23,11 +23,17 @@
     color: $color-gray-5;
     cursor: not-allowed;
   }
-}
 
-.error {
-  background: #FFFFFF;
-  border: 2px solid $color-red;
-  box-sizing: border-box;
-  border-radius: 4px;
+  &.error {
+    background: #FFFFFF;
+    border: 2px solid $color-red;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  &.tryAgain {
+    background: $color-blue;
+    border-color:#56CCF2;
+    margin: 60px 0 0;
+  }
 }

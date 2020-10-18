@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import URLInput from 'components/input';
 import Breadcrumbs from 'components/breadcrumbs';
+import Button from 'components/button';
 import styles from './main.module.scss';
+import buttonStyles from '../button/button.module.scss';
 
 export const getText = (stage, error) => {
   let title, subtitle;
@@ -30,13 +32,16 @@ export default function Main({ stage, error, setStage }) {
     setStage: PropTypes.func,
   };
 
+  console.log(buttonStyles.tryAgain);
+
   const {title, subtitle} = getText(stage, error);
   return (
     <main className={styles.main}>
       <h1 className={styles.mainTitle}>{title}</h1>
       <p className={styles.mainSubtitle}>{subtitle}</p>
       <Breadcrumbs stage={stage} error={error} />
-      <URLInput setStage={setStage} />
+      {stage <= 1 && <URLInput setStage={setStage} />}
+      {error && <Button className={buttonStyles.tryAgain} text="try again" />}
     </main>
   );
 }
