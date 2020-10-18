@@ -1,0 +1,33 @@
+@import 'styles/variables';
+
+.button {
+  width: 100px;
+  height: 40px;
+  margin: auto 0;
+  background: $color-orange;
+  border: 2px solid $color-orange;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:disabled {
+    background: #FFFFFF;
+    border: 1px solid $color-gray-6;
+    color: $color-gray-5;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  background: #FFFFFF;
+  border: 2px solid $color-red;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

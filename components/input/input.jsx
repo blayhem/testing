@@ -1,3 +1,4 @@
+import Button from 'components/button';
 import styles from './input.module.scss';
 
 export default function Input() {
@@ -7,7 +8,9 @@ export default function Input() {
         <input className={styles.textInput} type="text" required />
         <label className={styles.inputLabel}>The link</label>
       </div>
-      <button>send us</button>
+      <Button
+        text="send us"
+      />
     </div>
   );
 }

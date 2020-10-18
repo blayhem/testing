@@ -9,6 +9,7 @@
   border: 2px solid $color-gray-4;
   box-sizing: border-box;
   border-radius: 4px;
+  padding: 0 11px;
 
   .inputLabel { 
     position:relative;
@@ -18,17 +19,18 @@
       height: 100%;
       width: 100%;
       font-size:18px;
-      padding: 24px 11px 10px;
+      padding: 24px 0 10px;
       display:block;
+      // remove red outline on required:
       border:none;
+      outline:none;
+      box-shadow: none;
 
       &:focus,
       &:valid {
-        outline:none;
-
         & ~ .inputLabel {
           top:-15px;
-          left: -32px;
+          left: -40px;
           font-size: 10px;
           font-style: normal;
           line-height: 14px;
@@ -47,7 +49,7 @@
       align-items: center;
       position:absolute;
       pointer-events:none;
-      left:11px;
+      left: 0px;
       top: 0;
       height: 100%;
       transition: all 0.2s cubic-bezier(.44,.29,.03,.81);
@@ -58,10 +60,10 @@
       color: $color-gray-3;
 
       &:before {
+        content: url(/icons/link.svg);
         height: 30px;
         width: 30px;
         margin-right: 10px;
-        content: url(/link.svg);
         opacity: 1;
         transition: opacity 0.3s ease-in-out;
       }
