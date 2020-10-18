@@ -1,6 +1,6 @@
 export default {
   url: null,
-  stage: 1,
+  stage: 0,
   error: null,
   cats: null
 };

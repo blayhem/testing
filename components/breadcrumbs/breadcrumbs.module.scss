@@ -1,0 +1,30 @@
+@import 'styles/variables';
+
+.breadcrumbs {
+  margin-bottom: 60px;
+  display: flex;
+
+  .wrapper {
+    display: flex;
+
+    .item {
+      width: 27px;
+      text-align: center;
+  
+      span {
+        margin: 0;
+        margin-left: -100%;
+        margin-right: -100%;
+        text-align: center;
+      }
+    }
+  
+    .line {
+      position: relative;
+      top: 17px;
+      left: 2px;
+      width: 200px;
+      height: 2px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @import 'styles/variables';
 
-.URLinput {
+.URLInput {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -11,7 +11,11 @@
   border-radius: 4px;
   padding: 0 11px;
 
-  .inputLabel { 
+  &.valid {
+    border: 2px solid #27AE60;
+  }
+
+  .inputLabel {
     position:relative;
     flex-grow: 1;
 
@@ -36,10 +40,23 @@
           line-height: 14px;
           color: $color-gray-2;
 
+          &.error {
+            color: $color-red
+          }
+
           &:before {
             opacity: 0;
             transition: opacity 0s;
           }
+        }
+      }
+
+      &:disabled { // url valid
+        background-color: transparent;
+        box-shadow: none;
+
+        & ~ .inputLabel:before {
+          display: none;
         }
       }
     }
@@ -66,6 +83,15 @@
         margin-right: 10px;
         opacity: 1;
         transition: opacity 0.3s ease-in-out;
+      }
+
+      &.error {
+        color: $color-red
+      }
+
+      &.valid {
+        font-style: normal;
+        color: $color-green;
       }
     }
   }
