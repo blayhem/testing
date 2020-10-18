@@ -4,7 +4,7 @@ import cx from 'classnames';
 import Button from 'components/button';
 import styles from './input.module.scss';
 
-function Input({ setStage }) {
+function Input({ setStage, postData }) {
   const [url, setURL] = useState('');
   const [isURLValid, setValid] = useState(null);
   const [labelText, setLabel] = useState('Add the url');
@@ -19,8 +19,7 @@ function Input({ setStage }) {
         setLabel('Thanks, we will do the magic!');
         setURL('');
         setStage(1);
-        // sendData();
-        // setTimeout(() => setStage(2), 2500);
+        postData();
       } else {
         setValid(false);
         setLabel('Sorry, but this is not a link what we want.');
@@ -71,7 +70,7 @@ function Input({ setStage }) {
           }}
           onFocus={() => isURLValid === null && setLabel('The link')}
           onBlur={() => !url && setLabel('Add the url')}
-          value={isURLValid ? '' : undefined}
+          value={isURLValid ? '' : url}
         />
         <label
           className={cx(styles.inputLabel, {

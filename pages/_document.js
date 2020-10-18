@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta name="viewport" content="width=1024, initial-scale=1, shrink-to-fit=no" />
           <title>Sigma Rail Cat Counter</title>
           <link rel="icon" href="/favicon.ico" />
           <link

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import initialState from './initial-state';
 
 const slice = createSlice({
@@ -22,19 +22,30 @@ const slice = createSlice({
   },
 });
 
-export const postData = () => async (dispatch) => {
-  const { setStage, setError, setCatsNumber } = slice.actions;
-  try {
-    const response = await fetch('https://whispering-ravine-32505.herokuapp.com');
-    const data = await response.json();
+export const postData = createAsyncThunk(
+  'api/postData',
+  async (_, thunkAPI) => {
+    const { dispatch } = thunkAPI;
+    const { setStage, setError, setCatsNumber } = slice.actions;
+    // setTimeout(() => setStage(2), 2500);
+    try {
+      const response = await fetch(
+        'https://whispering-ravine-32505.herokuapp.com/cats',
+        {
+          method: 'POST',
+          cache: 'no-cache',
+        }
+      );
+      const data = await response.json();
 
-    dispatch(setCatsNumber(data.number));
-    dispatch(setStage(3));
-    return data.number;
-  } catch (e) {
-    dispatch(setError(true));
-    return null;
+      dispatch(setCatsNumber(data.number));
+      dispatch(setStage(3));
+      return data.number;
+    } catch (e) {
+      dispatch(setError(true));
+      return null;
+    }
   }
-};
+);
 
 export default slice;

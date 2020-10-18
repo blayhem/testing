@@ -32,8 +32,6 @@ export default function Main({ stage, error, setStage }) {
     setStage: PropTypes.func,
   };
 
-  console.log(buttonStyles.tryAgain);
-
   const {title, subtitle} = getText(stage, error);
   return (
     <main className={styles.main}>
