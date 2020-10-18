@@ -9,6 +9,8 @@ it('Renders without crashing', () => {
 });
 
 it('Renders correctly', () => {
-  const tree = renderer.create(<Button />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const textButton = renderer.create(<Button text="send us" />).toJSON();
+  expect(textButton).toMatchSnapshot();
+  const iconButton = renderer.create(<Button icon="/icons/error.svg" />).toJSON();
+  expect(iconButton).toMatchSnapshot();
 });

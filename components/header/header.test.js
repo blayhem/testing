@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Header from './header';
+import Header from './header.jsx';
 
 it('Renders without crashing', () => {
   const div = document.createElement('div');
