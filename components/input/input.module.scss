@@ -18,38 +18,53 @@
       height: 100%;
       width: 100%;
       font-size:18px;
-      padding: 10px 10px 10px 5px;
+      padding: 24px 11px 10px;
       display:block;
       border:none;
 
-      &:valid ~ .inputLabel {
-        top:-20px;
-        font-size:14px;
-        color:#5264AE;
-      }
-
-      &:focus {
+      &:focus,
+      &:valid {
         outline:none;
 
         & ~ .inputLabel {
-          top:-20px;
-          font-size:14px;
-          color:#5264AE;
+          top:-15px;
+          left: -32px;
+          font-size: 10px;
+          font-style: normal;
+          line-height: 14px;
+          color: $color-gray-2;
+
+          &:before {
+            opacity: 0;
+            transition: opacity 0s;
+          }
         }
       }
     }
 
     .inputLabel {
-      color:#999; 
-      font-size:18px;
-      font-weight:normal;
+      display: flex;
+      align-items: center;
       position:absolute;
       pointer-events:none;
-      left:5px;
-      top: 14px;
-      transition:0.2s ease all; 
-      -moz-transition:0.2s ease all; 
-      -webkit-transition:0.2s ease all;
+      left:11px;
+      top: 0;
+      height: 100%;
+      transition: all 0.2s cubic-bezier(.44,.29,.03,.81);
+
+      font-style: italic;
+      font-size: 20px;
+      line-height: 28px;
+      color: $color-gray-3;
+
+      &:before {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        content: url(/link.svg);
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
     }
   }
 }

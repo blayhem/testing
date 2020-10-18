@@ -9,8 +9,6 @@ it('Renders without crashing', () => {
 });
 
 it('Renders correctly', () => {
-  const tree = renderer
-    .create(<Header />)
-    .toJSON();
+  const tree = renderer.create(<Header />).toJSON();
   expect(tree).toMatchSnapshot();
 });

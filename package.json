@@ -29,6 +29,9 @@
       "node_modules"
     ]
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "devDependencies": {
     "babel-jest": "^26.5.2",
     "identity-obj-proxy": "^3.0.0",
