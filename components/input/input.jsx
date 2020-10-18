@@ -71,7 +71,7 @@ function Input({ setStage }) {
           }}
           onFocus={() => isURLValid === null && setLabel('The link')}
           onBlur={() => !url && setLabel('Add the url')}
-          value={isURLValid ? '' : null}
+          value={isURLValid ? '' : undefined}
         />
         <label
           className={cx(styles.inputLabel, {
