@@ -13,6 +13,11 @@ it('Renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
+it('Renders error case', () => {
+  const tree = renderer.create(<Breadcrumbs error />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 it('Expects the propTypes to be respected', () => {
   console.error = jest.fn();
   renderer.create(<Breadcrumbs stage={[]} />).toJSON();
