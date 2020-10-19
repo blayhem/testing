@@ -65,6 +65,7 @@ function Input({ setStage, postData }) {
         interaction and states on the button & other elements, otherwise
         it would use a form for just posting the introduced URL */}
         <input
+          id="text-input"
           className={styles.textInput}
           type="text"
           required
@@ -83,6 +84,7 @@ function Input({ setStage, postData }) {
             [styles.valid]: isURLValid,
             [styles.error]: isURLValid === false,
           })}
+          for="text-input"
         >
           {labelText}
         </label>

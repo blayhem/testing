@@ -29,7 +29,7 @@ export default function Breadcrumbs({ stage, error }) {
         return (
           <div key={s} className={styles.wrapper}>
             <div className={styles.item}>
-              <img src={icon} />
+              <img src={icon} alt={`checkbox-${i}`} />
               <span style={{ color: textColor }}>{s}</span>
             </div>
             {i < stages.length - 1 && (
