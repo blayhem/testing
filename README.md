@@ -39,9 +39,8 @@ The tests implemented are:
 - **Unit tests** (component rendering, snapshots...) on every component.
 - **Functional unit tests** (reducers, API calls...) on `providers/api`
 - Some **integration tests** with enzyme and react-testing-library (check the `header` and `main` components) to try basic interaction on React elements.
+- Some "happy path" **end-to-end** tests with cypress (check the `cypress/integration` folder). Run `yarn cypress:open` to run the suite.
 
-I didn't have the time to implement end-to-end tests yet.
-<!-- TODO: implement those! -->
 I didn't set any CI tools on the project because this demo project is not going to have feature PRs, but I would add GitHub Hooks with `jest` on pre-commit if that were the case (among other tools, depending on the needs of the project).
 
 ## 4. Performance

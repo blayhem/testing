@@ -35,6 +35,7 @@ function Input({ setStage, postData }) {
       return {
         error: true,
         icon: '/icons/error.svg',
+        disabled: true,
       };
     } else if (isURLValid) {
       return {
@@ -49,6 +50,7 @@ function Input({ setStage, postData }) {
           borderColor: '#E0E0E0',
           color: '#E0E0E0',
         },
+        disabled: true,
       };
     } else {
       return {

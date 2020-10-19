@@ -7,7 +7,7 @@ export default function Counter({ number }) {
   };
 
   return (
-    <div className={styles.counter}>
+    <div className={styles.counter} id="cats-counter">
       <img src="/icons/stonks.svg" />
       {number} cats detected
     </div>
