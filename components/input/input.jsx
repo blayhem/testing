@@ -84,7 +84,7 @@ function Input({ setStage, postData }) {
             [styles.valid]: isURLValid,
             [styles.error]: isURLValid === false,
           })}
-          for="text-input"
+          htmlFor="text-input"
         >
           {labelText}
         </label>
