@@ -1,3 +1,4 @@
+import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Main, { getText } from './main';
@@ -32,6 +33,40 @@ it('Renders correctly', () => {
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+it('Renders counter', () => {
+  const main = shallow(
+    <Main
+      stage={3}
+      error={false}
+      cats={42}
+      setStage={() => {}}
+      setError={() => {}}
+      postData={() => {}}
+    />
+  );
+  const counter = main.find({ number: 42 }).render().text();
+  expect(counter).toBe('42 cats detected');
+});
+
+it('Clicks "try again" button', () => {
+  const setError = jest.fn();
+
+  const main = shallow(
+      <Main
+        stage={2}
+        error={true}
+        cats={null}
+        setStage={() => {}}
+        setError={setError}
+        postData={() => {}}
+      />
+  );
+
+  const button = main.find({text: "try again"});
+  button.simulate('click');
+  expect(setError).toHaveBeenCalledTimes(1);
 });
 
 it('Returns the correct title and subtitle', () => {

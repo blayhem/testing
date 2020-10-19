@@ -24,7 +24,7 @@ const slice = createSlice({
 
 export const postData = createAsyncThunk(
   'api/postData',
-  async (_, thunkAPI) => {
+  async (url, thunkAPI) => {
     const { dispatch } = thunkAPI;
     const { setStage, setError, setCatsNumber } = slice.actions;
 
@@ -34,11 +34,16 @@ export const postData = createAsyncThunk(
         {
           method: 'POST',
           cache: 'no-cache',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ url }) // body data type must match "Content-Type" header
         }
       );
       const data = await response.json();
 
       dispatch(setCatsNumber(data.number));
+      dispatch(setError(false));
       dispatch(setStage(3));
       return data.number;
     } catch (e) {

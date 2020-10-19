@@ -28,11 +28,12 @@ export const getText = (stage, error) => {
   return { title, subtitle };
 };
 
-export default function Main({ stage, error, cats, setStage, setError, postData }) {
+export default function Main({ stage, error, cats, url, setStage, setError, postData }) {
   Main.propTypes = {
     stage: PropTypes.number,
     error: PropTypes.bool,
     cats: PropTypes.number,
+    url: PropTypes.string,
     setStage: PropTypes.func,
     setError: PropTypes.func,
     postData: PropTypes.func
@@ -51,7 +52,7 @@ export default function Main({ stage, error, cats, setStage, setError, postData 
           text="try again"
           onClick={() => {
             setError(false);
-            setTimeout(() => postData(), 1000);
+            setTimeout(() => postData(url), 1000);
           }}
         />
       )}

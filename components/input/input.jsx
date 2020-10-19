@@ -21,7 +21,7 @@ function Input({ setStage, postData }) {
         setURL('');
         setStage(1);
         // adjust timeouts to desired screen time for each stage
-        setTimeout(() => postData(), 1500);
+        setTimeout(() => postData(url), 1500);
         setTimeout(() => setStage(2), 2000);
       } else {
         setValid(false);
@@ -61,6 +61,9 @@ function Input({ setStage, postData }) {
   return (
     <div className={cx(styles.URLInput, { [styles.valid]: isURLValid })}>
       <div className={styles.inputLabel}>
+        {/* this component is not using a form because it needs complex
+        interaction and states on the button & other elements, otherwise
+        it would use a form for just posting the introduced URL */}
         <input
           className={styles.textInput}
           type="text"

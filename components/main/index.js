@@ -7,6 +7,7 @@ export default connect(
     stage: selectors.getStage(state),
     error: selectors.getMagicError(state),
     cats: selectors.getCatsNumber(state),
+    url: selectors.getUrl(state),
   }),
   {
     setStage: actions.setStage,
