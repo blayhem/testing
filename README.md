@@ -36,10 +36,11 @@ For the styles, the application uses an extensible global styles file, but then 
 You can run `yarn test` or `yarn test --coverage` to run the suite of tests available in the application and also check the coverage of the tests in the code. The coverage could be higher (specially on complex components such as `Input`), but there was a lot to test for the time available.
 
 The tests implemented are:
-- Functional tests (component rendering, snapshots...) on every component.
-- Unit tests (reducers, API calls...) on `providers/api`
+- **Unit tests** (component rendering, snapshots...) on every component.
+- **Functional unit tests** (reducers, API calls...) on `providers/api`
+- Some **integration tests** with enzyme and react-testing-library (check the `header` and `main` components) to try basic interaction on React elements.
 
-I didn't have the time to implement integration nor end-to-end tests yet.
+I didn't have the time to implement end-to-end tests yet.
 <!-- TODO: implement those! -->
 I didn't set any CI tools on the project because this demo project is not going to have feature PRs, but I would add GitHub Hooks with `jest` on pre-commit if that were the case (among other tools, depending on the needs of the project).
 
