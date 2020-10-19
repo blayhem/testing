@@ -43,7 +43,7 @@ describe('actions', () => {
     const cats = await postData()(
       () => {} // dispatch
     );
-    expect(cats).toEqual(42);
+    expect(cats.payload).toEqual(42);
     global.fetch.mockClear();
     delete global.fetch;
   });
@@ -52,7 +52,7 @@ describe('actions', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject("API is down"));
   
     const cats = await postData()(() => {});
-    expect(cats).toEqual(null);
+    expect(cats.payload).toEqual(null);
     global.fetch.mockClear();
     delete global.fetch;
   });

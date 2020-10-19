@@ -27,7 +27,7 @@ export const postData = createAsyncThunk(
   async (_, thunkAPI) => {
     const { dispatch } = thunkAPI;
     const { setStage, setError, setCatsNumber } = slice.actions;
-    // setTimeout(() => setStage(2), 2500);
+
     try {
       const response = await fetch(
         'https://whispering-ravine-32505.herokuapp.com/cats',

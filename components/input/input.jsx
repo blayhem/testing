@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import Button from 'components/button';
 import styles from './input.module.scss';
 
@@ -19,7 +20,8 @@ function Input({ setStage, postData }) {
         setLabel('Thanks, we will do the magic!');
         setURL('');
         setStage(1);
-        postData();
+        setTimeout(() => setStage(2), 2000);
+        setTimeout(() => postData(), 2000);
       } else {
         setValid(false);
         setLabel('Sorry, but this is not a link what we want.');

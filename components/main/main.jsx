@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
+
 import URLInput from 'components/input';
 import Breadcrumbs from 'components/breadcrumbs';
 import Button from 'components/button';
+import Counter from 'components/cats-counter';
+
 import styles from './main.module.scss';
 import buttonStyles from '../button/button.module.scss';
 
@@ -22,24 +25,37 @@ export const getText = (stage, error) => {
     title = 'Great news!';
     subtitle = `Gandalf did the right work. Please, use this report with responsibility, the power is on the details.`;
   }
-  return {title, subtitle};
+  return { title, subtitle };
 };
 
-export default function Main({ stage, error, setStage }) {
+export default function Main({ stage, error, cats, setStage, setError, postData }) {
   Main.propTypes = {
     stage: PropTypes.number,
     error: PropTypes.bool,
+    cats: PropTypes.number,
     setStage: PropTypes.func,
+    setError: PropTypes.func,
+    postData: PropTypes.func
   };
 
-  const {title, subtitle} = getText(stage, error);
+  const { title, subtitle } = getText(stage, error);
   return (
     <main className={styles.main}>
       <h1 className={styles.mainTitle}>{title}</h1>
       <p className={styles.mainSubtitle}>{subtitle}</p>
       <Breadcrumbs stage={stage} error={error} />
       {stage <= 1 && <URLInput setStage={setStage} />}
-      {error && <Button className={buttonStyles.tryAgain} text="try again" />}
+      {stage === 2 && error && (
+        <Button
+          className={buttonStyles.tryAgain}
+          text="try again"
+          onClick={() => {
+            setError(false);
+            setTimeout(() => postData(), 1000);
+          }}
+        />
+      )}
+      {stage === 3 && cats && <Counter number={cats} />}
     </main>
   );
 }

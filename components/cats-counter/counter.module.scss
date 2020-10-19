@@ -1,0 +1,18 @@
+@import 'styles/variables';
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 326px;
+  height: 60px;
+  background-color: $color-green;
+  border-radius: 4px;
+  font-size: 34px;
+  line-height: 40px;
+  color: $color-white;
+
+  img {
+    margin-right: 10px;
+  }
+}
