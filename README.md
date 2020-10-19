@@ -20,6 +20,7 @@ To create a production-ready build of the application, run `yarn build`, and `ya
 The app is organized as follows:
 
 - `/components`: UI components, each with SCSS modules and tests.
+- `/cypress`: cypress test files (more in the 'Testing' section below).
 - `/pages`: next pages/routes, decoupled from styles, pure scaffolding.
 - `/providers`: redux-toolkit provider (actions, selectors...), store and tests.
 - `/public`: assets.
@@ -27,13 +28,15 @@ The app is organized as follows:
 
 This app, although it's a very lightweight exercise, it's packed with overkill tools such as [Redux toolkit](https://redux-toolkit.js.org/) in order to showcase what can be done (with a complex state manager, in this case), and potentially be more scalable in the future.
 
-It uses [Jest](https://jestjs.io/) for functional and snapshot testing. More about this down below. The reasons for using Jest are its simplicity but also the amount of test coverage it can provide with the different types of tests that it supports.
+It uses [Jest](https://jestjs.io/) for functional and snapshot testing. More about this down below. The reasons for using Jest are its simplicity but also the amount of test coverage it can provide with the different types of tests that it supports. For more advanced integration/e2e tests it uses [Cypress](https://www.cypress.io).
 
 For the styles, the application uses an extensible global styles file, but then it uses CSS modules (or, in this case, SASS/SCSS modules) in each component. Although the modules already provide distinct naming for the classes and one can argue that SASS is not necessary, it's cleaner and easier to organize by nesting the styles too.
 
 ## 3. Testing.
 
-You can run `yarn test` or `yarn test --coverage` to run the suite of tests available in the application and also check the coverage of the tests in the code. The coverage could be higher (specially on complex components such as `Input`), but there was a lot to test for the time available.
+You can run `yarn test` or `yarn test --coverage` to run the suite of tests available in the application and also check the coverage of the tests in the code.
+
+The coverage could be higher (specially on complex components such as `Input`), but there was a lot to test for the time available.
 
 The tests implemented are:
 - **Unit tests** (component rendering, snapshots...) on every component.
