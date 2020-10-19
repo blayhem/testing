@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { getText } from './main';
+import Main, { getText } from './main';
 
 it('Renders without crashing', () => {
   const div = document.createElement('div');

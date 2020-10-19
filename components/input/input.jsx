@@ -20,8 +20,9 @@ function Input({ setStage, postData }) {
         setLabel('Thanks, we will do the magic!');
         setURL('');
         setStage(1);
+        // adjust timeouts to desired screen time for each stage
+        setTimeout(() => postData(), 1500);
         setTimeout(() => setStage(2), 2000);
-        setTimeout(() => postData(), 2000);
       } else {
         setValid(false);
         setLabel('Sorry, but this is not a link what we want.');
@@ -90,6 +91,12 @@ function Input({ setStage, postData }) {
 
 Input.propTypes = {
   setStage: PropTypes.func,
+  postData: PropTypes.func,
+};
+
+Input.defaultProps = {
+  setStage: () => {},
+  postData: () => {},
 };
 
 export default Input;

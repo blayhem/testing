@@ -44,7 +44,7 @@ export default function Main({ stage, error, cats, setStage, setError, postData 
       <h1 className={styles.mainTitle}>{title}</h1>
       <p className={styles.mainSubtitle}>{subtitle}</p>
       <Breadcrumbs stage={stage} error={error} />
-      {stage <= 1 && <URLInput setStage={setStage} />}
+      {stage <= 1 && <URLInput setStage={setStage} postData={postData} />}
       {stage === 2 && error && (
         <Button
           className={buttonStyles.tryAgain}
