@@ -46,7 +46,3 @@ The tests implemented are:
 -   Some "happy path" **end-to-end** tests with cypress (check the `cypress/integration` folder). Run `yarn cypress:open` to run the suite.
 
 I didn't set any CI tools on the project because this demo project is not going to have feature PRs, but I would add GitHub Hooks with `jest` on pre-commit if that were the case (among other tools, depending on the needs of the project).
-
-## 4. Performance
-
-You can check the optimized build lighthouse report ([lighthouse.json](./lighthouse.json)) on [this online viewer](https://googlechrome.github.io/lighthouse/viewer/). Normally I wouldn't include this file on the repo, but I did it to showcase the performance of Nextjs and the production app easily without having to install dependencies and compile the project.
