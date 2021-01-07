@@ -29,17 +29,14 @@ export const postData = createAsyncThunk(
     const { setStage, setError, setCatsNumber } = slice.actions;
 
     try {
-      const response = await fetch(
-        'https://whispering-ravine-32505.herokuapp.com/cats',
-        {
-          method: 'POST',
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ url }) // body data type must match "Content-Type" header
-        }
-      );
+      const response = await fetch('/api/cats', {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }), // body data type must match "Content-Type" header
+      });
       const data = await response.json();
 
       dispatch(setCatsNumber(data.number));
