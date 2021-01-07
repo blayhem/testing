@@ -1,4 +1,4 @@
-# Sigma Rail Front-end test.
+# Learning frontend testing.
 
 ## 1. Setup
 
@@ -19,12 +19,12 @@ To create a production-ready build of the application, run `yarn build`, and `ya
 
 The app is organized as follows:
 
-- `/components`: UI components, each with SCSS modules and tests.
-- `/cypress`: cypress test files (more in the 'Testing' section below).
-- `/pages`: next pages/routes, decoupled from styles, pure scaffolding.
-- `/providers`: redux-toolkit provider (actions, selectors...), store and tests.
-- `/public`: assets.
-- `/styles`: global styles and variables available to every component.
+-   `/components`: UI components, each with SCSS modules and tests.
+-   `/cypress`: cypress test files (more in the 'Testing' section below).
+-   `/pages`: next pages/routes, decoupled from styles, pure scaffolding.
+-   `/providers`: redux-toolkit provider (actions, selectors...), store and tests.
+-   `/public`: assets.
+-   `/styles`: global styles and variables available to every component.
 
 This app, although it's a very lightweight exercise, it's packed with overkill tools such as [Redux toolkit](https://redux-toolkit.js.org/) in order to showcase what can be done (with a complex state manager, in this case), and potentially be more scalable in the future.
 
@@ -39,10 +39,11 @@ You can run `yarn test` or `yarn test --coverage` to run the suite of tests avai
 The coverage could be higher (specially on complex components such as `Input`), but there was a lot to test for the time available.
 
 The tests implemented are:
-- **Unit tests** (component rendering, snapshots...) on every component.
-- **Functional unit tests** (reducers, API calls...) on `providers/api`
-- Some **integration tests** with enzyme and react-testing-library (check the `header` and `main` components) to try basic interaction on React elements.
-- Some "happy path" **end-to-end** tests with cypress (check the `cypress/integration` folder). Run `yarn cypress:open` to run the suite.
+
+-   **Unit tests** (component rendering, snapshots...) on every component.
+-   **Functional unit tests** (reducers, API calls...) on `providers/api`
+-   Some **integration tests** with enzyme and react-testing-library (check the `header` and `main` components) to try basic interaction on React elements.
+-   Some "happy path" **end-to-end** tests with cypress (check the `cypress/integration` folder). Run `yarn cypress:open` to run the suite.
 
 I didn't set any CI tools on the project because this demo project is not going to have feature PRs, but I would add GitHub Hooks with `jest` on pre-commit if that were the case (among other tools, depending on the needs of the project).
 

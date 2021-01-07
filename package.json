@@ -1,5 +1,5 @@
 {
-  "name": "sigma-test",
+  "name": "testing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,7 +34,10 @@
     "moduleDirectories": [
       "node_modules"
     ],
-    "modulePathIgnorePatterns": ["node_modules", "cypress"],
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "cypress"
+    ],
     "setupFilesAfterEnv": [
       "<rootDir>/components/setupTests.js"
     ]

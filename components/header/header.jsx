@@ -7,14 +7,11 @@ export default function Header({ setStage }) {
   };
 
   return (
-    <header
-      className={styles.header}
-      onClick={() => setStage(0)}
-    >
-      <img src="/logo.svg" alt="Sigma Rail Logo" className={styles.logo} />
+    <header className={styles.header} onClick={() => setStage(0)}>
+      <img src="/logo.svg" alt="Cat Counter Logo" className={styles.logo} />
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>Sigma Rail</h1>
-        <p className={styles.subtitle}>Data Driven Industrial</p>
+        <h1 className={styles.title}>Cat Counter</h1>
+        <p className={styles.subtitle}>Trying testing JS frameworks</p>
       </div>
     </header>
   );

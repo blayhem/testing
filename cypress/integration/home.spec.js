@@ -5,7 +5,7 @@ describe('e2e general test', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000');
-  })
+  });
 
   it('checks for basic content in the view', () => {
     cy.get('header');
@@ -28,8 +28,11 @@ describe('e2e general test', () => {
   it('enters right URL in the input', () => {
     // Fills the input
     cy.get('input')
-      .type('https://sigma-rail.com/iNhg.gif')
-      .should('have.value', 'https://sigma-rail.com/iNhg.gif');
+      .type('https://media0.giphy.com/media/STYcRDzNO6AYNmMgvA/giphy.gif')
+      .should(
+        'have.value',
+        'https://media0.giphy.com/media/STYcRDzNO6AYNmMgvA/giphy.gif'
+      );
 
     // Clicks the button, validator does its job, label text changes
     cy.get('button').click();
@@ -38,7 +41,9 @@ describe('e2e general test', () => {
 
   it('reaches the final screen', () => {
     // Fills the input, clicks the button
-    cy.get('input').type('https://sigma-rail.com/iNhg.gif');
+    cy.get('input').type(
+      'https://media0.giphy.com/media/STYcRDzNO6AYNmMgvA/giphy.gif'
+    );
     cy.get('button').click();
 
     // waits for the API response (lets try 6s?), checks we got the cats counter
