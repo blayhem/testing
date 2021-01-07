@@ -11,8 +11,8 @@ import buttonStyles from '../button/button.module.scss';
 export const getText = (stage, error) => {
   let title, subtitle;
   if (stage <= 1) {
-    title = 'Add a link to follow';
-    subtitle = `As Google likes the links we also like links. Please include a link you really like and lets us make magic.`;
+    title = 'Add a link to continue';
+    subtitle = `Please include a link to an image that you really like, and we will do some magic with it.`;
   } else if (stage === 2) {
     if (error) {
       title = 'Sorry, shit happens';
@@ -28,7 +28,15 @@ export const getText = (stage, error) => {
   return { title, subtitle };
 };
 
-export default function Main({ stage, error, cats, url, setStage, setError, postData }) {
+export default function Main({
+  stage,
+  error,
+  cats,
+  url,
+  setStage,
+  setError,
+  postData,
+}) {
   Main.propTypes = {
     stage: PropTypes.number,
     error: PropTypes.bool,
@@ -36,7 +44,7 @@ export default function Main({ stage, error, cats, url, setStage, setError, post
     url: PropTypes.string,
     setStage: PropTypes.func,
     setError: PropTypes.func,
-    postData: PropTypes.func
+    postData: PropTypes.func,
   };
 
   const { title, subtitle } = getText(stage, error);
@@ -57,6 +65,21 @@ export default function Main({ stage, error, cats, url, setStage, setError, post
         />
       )}
       {stage === 3 && cats && <Counter number={cats} />}
+
+      {stage <= 1 && (
+        <div className={styles.disclaimer}>
+          <p>
+            This application is just the visual interface of a project I made
+            while learning the fundamentals of JS testing.
+          </p>
+          <p>
+            If you want to take a look at the tests I implemented on React
+            components, Redux actions, etc. using Jest and Cypress, you can find{' '}
+            <a href="https://github.com/blayhem/testing">the code here</a>.
+          </p>
+          <p></p>
+        </div>
+      )}
     </main>
   );
 }

@@ -23,4 +23,17 @@
     margin: 0;
     margin-bottom: 51px;
   }
+
+  .disclaimer {
+    margin-top: 64px;
+    max-width: 580px;
+
+    p {
+      margin: 8px 0;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }
