@@ -54,25 +54,25 @@ it('Clicks "try again" button', () => {
   const setError = jest.fn();
 
   const main = shallow(
-      <Main
-        stage={2}
-        error={true}
-        cats={null}
-        setStage={() => {}}
-        setError={setError}
-        postData={() => {}}
-      />
+    <Main
+      stage={2}
+      error={true}
+      cats={null}
+      setStage={() => {}}
+      setError={setError}
+      postData={() => {}}
+    />
   );
 
-  const button = main.find({text: "try again"});
+  const button = main.find({ text: 'try again' });
   button.simulate('click');
   expect(setError).toHaveBeenCalledTimes(1);
 });
 
 it('Returns the correct title and subtitle', () => {
   expect(getText(1, false)).toEqual({
-    title: 'Add a link to follow',
-    subtitle: `As Google likes the links we also like links. Please include a link you really like and lets us make magic.`,
+    title: 'Add a link to continue',
+    subtitle: `Please include a link to an image that you really like, and we will do some magic with it.`,
   });
   expect(getText(2, false)).toEqual({
     title: 'Gandalf is working',
